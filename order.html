@@ -52,7 +52,7 @@
 					<div class="col-md-8 offset-2">
 						<form action="/http://mercury.swin.
 						edu.au/it000000/cos1
-						0005/regtest.php" method="POST" class="tm-contact-form">
+						0005/regtest.php" method="POST" class="tm-contact-form" onsubmit="validateOrderForm()">
 					        
 							<div class="form-group">
 								<p>Delivery or Pickup</p>
@@ -137,6 +137,10 @@
 									<br>
 								</div>
 								
+								<label for="postCode">Post Code</label>
+								<input type="number" id="postCode" name="postCode" class="form-control" required placeholder="1234">
+								<br>
+
 								<label for="expmonth">Exp Month</label>
 								<input type="text" id="expmonth" name="expmonth" class="form-control" required placeholder="September">
 								<br>

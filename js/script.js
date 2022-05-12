@@ -68,3 +68,13 @@ function selectAmericanExpressCard() {
     document.getElementById('masterCard').style.display = "none";
     document.getElementById('americanExpress').style.display = "block";
 }
+
+// Post Code Validation In Order Page
+function validateOrderForm() {
+    let postCode = document.getElementById("postCode").value;
+    if (postCode.length < 4) {
+        alert("Post Code must be 4 digits long");
+        return false;
+    }
+    return true;
+}
