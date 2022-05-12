@@ -81,21 +81,7 @@
 								</label>
 							</div>
 							<br>
-							
-							<script>
-								function checkBillingAddress() {
-									let deliveryAddress = document.getElementById('deliveryAdd').value;
-									let billingAddress = document.getElementById('billingAdd');
-									let checkBox = document.getElementById("myCheck");
 
-									if (checkBox.checked == true && deliveryAddress !==""){
-										billingAddress.value = deliveryAddress; 
-									} else {
-										alert('Please Fill Up Your Delivery Address');
-										return checkBox.checked = false;
-									}
-								}
-							</script>
 
 							<div class="form-group">
 								<label for="contactNumber">Contact Number</label>

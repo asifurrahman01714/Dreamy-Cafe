@@ -38,3 +38,16 @@ function hidePaymentInformation() {
     var x = document.getElementById("payment");
     x.style.display = "none";
 }
+
+function checkBillingAddress() {
+    let deliveryAddress = document.getElementById('deliveryAdd').value;
+    let billingAddress = document.getElementById('billingAdd');
+    let checkBox = document.getElementById("myCheck");
+
+    if (checkBox.checked == true && deliveryAddress !==""){
+        billingAddress.value = deliveryAddress; 
+    } else {
+        alert('Please Fill Up Your Delivery Address');
+        return checkBox.checked = false;
+    }
+}
