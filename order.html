@@ -109,20 +109,33 @@
 								<h3>Payment</h3>
 								<label for="fname">Accepted Cards</label>
 								<div class="icon-container mt-2 mb-2">
-									<i class="fa-brands fa-cc-visa" style="color:navy; font-size:35px;"></i>
-									<i class="fa-brands fa-cc-amex" style="color:blue; font-size:35px;"></i>
-									<i class="fa-brands fa-cc-mastercard" style="color:red; font-size:35px;"></i>
-									<i class="fa-brands fa-cc-discover" style="color:orange; font-size:35px;"></i>
+									<i class="fa-brands fa-cc-visa" onclick="selectVisaCard()" style="color:navy; font-size:35px;"></i>
+									<i class="fa-brands fa-cc-mastercard" onclick="selectMasterCard()" style="color:red; font-size:35px;"></i>
+									<i class="fa-brands fa-cc-amex" onclick="selectAmericanExpressCard()" style="color:blue; font-size:35px;"></i>
 								</div>
 
 								<label for="cname">Name on Card</label>
 								<input type="text" id="cname" name="cardname" class="form-control" required placeholder="John More Doe">
 								<br>
 
-								<label for="ccnum">Credit card number</label>
-								<input type="text" id="ccnum" name="cardnumber" class="form-control" required  placeholder="1111-2222-3333-4444">
-								<br>
+								<div id="visaCard">
+									<label for="ccnum">Credit card number (Visa Card)</label>
+									<input type="text" id="ccnum" name="cardnumber" class="form-control" required  placeholder="1111-2222-3333-4444">
+									<br>
+								</div>
 
+								<div id="masterCard" style="display:none">
+									<label for="ccnum">Credit card number (Master Card)</label>
+									<input type="text" id="ccnum" name="cardnumber" class="form-control" required  placeholder="1111-2222-3333-4444">
+									<br>
+								</div>
+
+								<div id="americanExpress" style="display:none">
+									<label for="ccnum">Credit card number (American Express Card)</label>
+									<input type="text" id="ccnum" name="cardnumber" class="form-control" required  placeholder="1111-222222-33333">
+									<br>
+								</div>
+								
 								<label for="expmonth">Exp Month</label>
 								<input type="text" id="expmonth" name="expmonth" class="form-control" required placeholder="September">
 								<br>

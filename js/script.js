@@ -51,3 +51,20 @@ function checkBillingAddress() {
         return checkBox.checked = false;
     }
 }
+
+// Card selection
+function selectVisaCard() {
+    document.getElementById('visaCard').style.display = "block";
+    document.getElementById('masterCard').style.display = "none";
+    document.getElementById('americanExpress').style.display = "none";
+}
+function selectMasterCard() {
+    document.getElementById('visaCard').style.display = "none";
+    document.getElementById('masterCard').style.display = "block";
+    document.getElementById('americanExpress').style.display = "none";
+}
+function selectAmericanExpressCard() {
+    document.getElementById('visaCard').style.display = "none";
+    document.getElementById('masterCard').style.display = "none";
+    document.getElementById('americanExpress').style.display = "block";
+}
