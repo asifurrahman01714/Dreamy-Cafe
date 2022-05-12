@@ -10,7 +10,6 @@
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>    
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js">
 	<link href="css/style.css" rel="stylesheet" />
 </head>
 
@@ -65,15 +64,38 @@
 
 							<div class="form-group" style="display:none" id="deliveryAddress">
 								<label for="name">Delivery Address</label>
-					          	<input type="text" name="deliveryAddress" class="form-control" placeholder="Delivery Address" required="" />
+					          	<input id="deliveryAdd" type="text" name="deliveryAddress" class="form-control" placeholder="Delivery Address" required="" />
 					        </div>
 					        <br>
 
 					        <div class="form-group">
 								<label for="billingAddress">Billing Address</label>
-					          	<input type="text" name="billingAddress" class="form-control" placeholder="Billing Address" required="" />
+					          	<input id="billingAdd" type="text" name="billingAddress" class="form-control" placeholder="Billing Address" />
 					        </div>
 							<br>
+
+							<div class="form-group">
+								<input type="checkbox" id="myCheck" name="BillingAddress" onclick="checkBillingAddress()">
+								<label for="BillingAddress">
+									 Shipping address same as billing
+								</label>
+							</div>
+							<br>
+							
+							<script>
+								function checkBillingAddress() {
+									let deliveryAddress = document.getElementById('deliveryAdd').value;
+									let billingAddress = document.getElementById('billingAdd');
+									let checkBox = document.getElementById("myCheck");
+
+									if (checkBox.checked == true && deliveryAddress !==""){
+										billingAddress.value = deliveryAddress; 
+									} else {
+										alert('Please Fill Up Your Delivery Address');
+										return checkBox.checked = false;
+									}
+								}
+							</script>
 
 							<div class="form-group">
 								<label for="contactNumber">Contact Number</label>
@@ -89,14 +111,15 @@
 
 							<div class="form-group">
 								<p>Pay On</p>
-								<input type="radio" id="pickup" name="pay" value="Pickup">
+								<input type="radio" id="pickup" name="pay" value="Pickup" onclick="showPaymentInformation()">
 								<label for="pickup">Pickup</label><br>
-								<input type="radio" id="online" name="pay" value="Online">
+								<input type="radio" id="online" name="pay" value="Online" onclick="hidePaymentInformation()">
 								<label for="online">Online</label><br>
 					        </div>
 							<br>
 
-							<div class="form-group border p-2 shadow">
+
+							<div class="form-group border p-2 shadow" id="payment" style="display: none">
 								<h3>Payment</h3>
 								<label for="fname">Accepted Cards</label>
 								<div class="icon-container mt-2 mb-2">
